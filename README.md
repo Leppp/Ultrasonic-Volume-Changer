@@ -17,10 +17,10 @@ On your Raspberry-Pi, open the file index.py and change those variables:
 - UDP_PORT
 
 Then, execute the command:
-<python index.py>
+`python index.py`
 
 On your main device, simply execute the command:
-<npm run start>
+`npm run start`
 
 # How to use:
 Simply put your hand over the ultrasonic sensor, and move it up to raise the volume, or move it down to lower it.
