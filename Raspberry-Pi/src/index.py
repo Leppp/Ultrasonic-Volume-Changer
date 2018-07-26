@@ -4,7 +4,7 @@ from rx import Observable, Observer
 import socket
 import json 
 
-UDP_IP = '10.40.142.222'
+UDP_IP = 'ip of your main device' # put the ip of your main device here
 UDP_PORT = 5000
 
 GPIO.setmode(GPIO.BCM)
@@ -29,11 +29,11 @@ def distance():
     TimeElapsed = StopTime - StartTime
     distance = (TimeElapsed * 34300) / 2
     dist = []
-    while len(dist) < 4:
+    while len(dist) < 4: # creates a list with 3 values of distance
         dist.append(distance)
-    dist.remove(max(dist))
-    dist.remove(min(dist))
-    distance = dist[0]
+    dist.remove(max(dist)) # removes the highest value
+    dist.remove(min(dist)) # removes the lowest value
+    distance = dist[0] 
     return distance
 
 class NetworkObserver(Observer):
@@ -53,9 +53,9 @@ class NetworkObserver(Observer):
     def on_completed(self):
         pass
 
-Observable.interval(25)\
+Observable.interval(25)\ # you can change the interval value (default: 25)
     .map(lambda i: distance())\
-    .scan(lambda acc, x: (x + (acc - ((x + (acc -x))/2)))/2)\
+    .scan(lambda acc, x: (x + (acc - ((x + (acc -x))/2)))/2)\ # the goal of this .scan is to smooth up the values
     .subscribe(NetworkObserver())
 
 input('')
