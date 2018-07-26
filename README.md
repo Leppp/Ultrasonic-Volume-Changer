@@ -24,3 +24,6 @@ On your main device, simply execute the command:
 
 # How to use:
 Simply put your hand over the ultrasonic sensor, and move it up to raise the volume, or move it down to lower it.
+
+# Help this project:
+Please inform me if any files needed for this to work aren't in the README
