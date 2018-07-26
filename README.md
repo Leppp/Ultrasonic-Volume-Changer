@@ -9,7 +9,7 @@ Allows you to change the volume on your computer using your hand and an ultrason
 - Wires
 
 # How to install:
-The "Raspberry-Pi" folder contains the files to use with the Raspberry-Pi, and the "Main-Device" folder the files to use with your main device.
+The *Raspberry-Pi* folder contains the files to use with the Raspberry-Pi, and the *Main-Device* folder the files to use with your main device.
 
 # How to run
 On your Raspberry-Pi, open the file index.py and change those variables:
@@ -17,10 +17,10 @@ On your Raspberry-Pi, open the file index.py and change those variables:
 - UDP_PORT
 
 Then, execute the command:
-python index.py
+<python index.py>
 
 On your main device, simply execute the command:
-npm run start
+<npm run start>
 
 # How to use:
 Simply put your hand over the ultrasonic sensor, and move it up to raise the volume, or move it down to lower it.
